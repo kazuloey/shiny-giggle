@@ -1,12 +1,5 @@
-const a = 1;
-<div>
-    <div>content</div>
+import { defineConfig } from 'astro/config';
 
-    <div>{username}</div>
-
-    <ul>
-
-        <li>item</li>
-
-    </ul>
-</div>
+export default defineConfig({
+  integrations: []
+});
