@@ -305,7 +305,9 @@ textarea {
 }
 
 [type=number] {
-    -moz-appearance: textfield
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
 }
 
 label[for] {
