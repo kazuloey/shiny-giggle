@@ -2,8 +2,8 @@
 import Card from "../components/Card.astro"
 import { gsap } from "gsap/gsap-core";
 import PhysicsPropsPlugin from 'gsap/PhysicsPropsPlugin';
-// Registra el plugin
 gsap.registerPlugin(PhysicsPropsPlugin);
+import '../styles/three-scene.css';
 ---
 
 
@@ -49,11 +49,24 @@ gsap.registerPlugin(PhysicsPropsPlugin);
       <div class="item">Elemento 3</div>
       <!-- Agrega más elementos según sea necesario -->
     </div>
+    <div class="_eventGrid_1fs6u_428">
+        <div 
+            class="_wrapper_oc6qz_1" 
+            data-js="grid" 
+            data-outline="false" 
+            data-common="false"
+        >
+            <canvas 
+                data-engine="three.js r173" 
+                width="682" 
+                height="752"
+            ></canvas>
+        </div>
+    </div>
         <div id="verde"></div> <!-- El cuadrado a animar -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r173/three.min.js"></script>
     <script>
-import gsap from "gsap";
-
+    import gsap from "gsap";
       // Ejecutar la animación al cargar la página
       window.onload = () => {
         // Primero, animar la opacidad a 1
@@ -65,9 +78,12 @@ import gsap from "gsap";
             gsap.to('#verde', {
               duration: 5, // Duración de la animación física  
               physicsProps2D: {
-                  x:{velocity:100, acceleration:400},
-                  y:{velocity:-300, friction:0.002}
+                x:{velocity:100, acceleration:400},
+                y:{velocity:100, friction:0.002}
               },
+              onComplete: () => {
+                console.log("Animación completa");
+              }
             });
           }
         });
