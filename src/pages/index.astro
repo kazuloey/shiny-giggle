@@ -66,8 +66,8 @@ import gsap from "gsap";
             gsap.to('#square', {
               duration: 5, // Duración de la animación física  
               physicsProps: {
-                  x: { velocity: 100, acceleration: 200 },
-                  y: { velocity: -200, friction: 0.1 },
+                  x:{velocity:200, acceleration:400},
+                  y:{velocity:-300, friction:0.002}
               },
             });
           }
