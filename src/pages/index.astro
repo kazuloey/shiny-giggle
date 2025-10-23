@@ -58,8 +58,9 @@ import gsap from "gsap";
       window.onload = () => {
         // Primero, animar la opacidad a 1
         gsap.to('#square', {
-          opacity: 100, // Termina con opacidad 100
+          opacity: 1, // Termina con opacidad 1
           duration: 2, // Duración de la animación de opacidad
+          rotateY: 360, // Rota sobre el eje Y
           onComplete: () => {
             // Luego, aplica la física
             gsap.to('#square', {
