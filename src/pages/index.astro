@@ -23,7 +23,7 @@ gsap.registerPlugin(PhysicsPropsPlugin);
         <title>Demo portfolio</title>
         <style>
          /* Estilo para el cuadrado */
-         #square {
+         #verde {
           width: 2cm; /* Ancho del cuadrado */
           height: 2cm; /* Alto del cuadrado */
           background-color: rgb(162, 239, 40); /* Color verde */
@@ -49,24 +49,23 @@ gsap.registerPlugin(PhysicsPropsPlugin);
       <div class="item">Elemento 3</div>
       <!-- Agrega más elementos según sea necesario -->
     </div>
-        <div id="square"></div> <!-- El cuadrado a animar -->
-    
+        <div id="verde"></div> <!-- El cuadrado a animar -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r173/three.min.js"></script>
     <script>
 import gsap from "gsap";
 
       // Ejecutar la animación al cargar la página
       window.onload = () => {
         // Primero, animar la opacidad a 1
-        gsap.to('#square', {
+        gsap.to('#verde', {
           opacity: 1, // Termina con opacidad 1
-          duration: 2, // Duración de la animación de opacidad
+          duration: 1, // Duración de la animación de opacidad
           rotateY: 360, // Rota sobre el eje Y
-          onComplete: () => {
-            // Luego, aplica la física
-            gsap.to('#square', {
+          onComplete: () => { // Luego, aplica la física
+            gsap.to('#verde', {
               duration: 5, // Duración de la animación física  
-              physicsProps: {
-                  x:{velocity:200, acceleration:400},
+              physicsProps2D: {
+                  x:{velocity:100, acceleration:400},
                   y:{velocity:-300, friction:0.002}
               },
             });
