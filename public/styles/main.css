@@ -86,10 +86,10 @@ body {
 }
 
 .social-link {
-  color: var(--text-color);
+  color: var rgb(255, 255, 255);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--text-color);
+  border: 1px solid var rgb(255, 255, 255);
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@ body {
 .nav {
   margin: 2rem auto;
   padding: 0.5rem;
-  background-color: var(--nav-bg);
+  background-color: var rgb(255, 66, 173);
   border-radius: 50px;
   display: flex;
   justify-content: space-around;
