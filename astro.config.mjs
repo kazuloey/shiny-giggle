@@ -1,7 +1,12 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+const a = 1;
+<div>
+    <div>content</div>
 
-// https://astro.build/config
-export default defineConfig({
-  // Your config here
-});
+    <div>{username}</div>
+
+    <ul>
+
+        <li>item</li>
+
+    </ul>
+</div>
