@@ -1,5 +1,8 @@
 ---
-
+// Frontmatter - all JavaScript/TypeScript goes here
+const username = "kazuloey";
+const currentDate = new Date();
+const formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' ');
 ---
 
 <!DOCTYPE html>
@@ -8,28 +11,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Demo portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/styles/main.css">
     </head>
     
     <body>
-        <nav class="nav">
-         <a href="/" class="nav-item active">HOME</a>
-         <a href="/works" class="nav-item">WORKS</a>
-         <a href="/profile" class="nav-item">PROFILE</a>
-         <a href="/contact" class="nav-item">CONTACT</a>
-        </nav>
+        <header class="header">
+          <div class="logo">
+            <div class="logo-line"></div>
+            <div class="logo-line"></div>
+            <div class="logo-line"></div>
+          </div>
+          
+          <div class="top-right">
+            <div class="time-display"></div>
+            
+            <a href="https://instagram.com/kazuloey" class="social-link">
+            </a>
+          </div>
+        </header>
 
-        <h1>Portfolio</h1>
-        <p>que divertido y complicado es esto</p> 
-        
-        <div class="footer-info">
-           <div class="footer-time">1:09</div>
-           <div class="footer-text">illustration</div>
-           <div class="footer-text">portfolio</div>
+        <div class="user-info">
+          <span class="username">@{username}</span>
+          <span class="date-time" id="current-datetime">{formattedDate}</span>
         </div>
 
-        <script src="/scripts/interactive.js"></script>
+        <nav class="nav">
+          <a href="/" class="nav-item active">HOME</a>
+          <a href="/works" class="nav-item">WORKS</a>
+          <a href="/profile" class="nav-item">PROFILE</a>
+          <a href="/contact" class="nav-item">CONTACT</a>
+        </nav>
     </body>
 </html>

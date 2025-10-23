@@ -320,3 +320,25 @@ body {
   cursor: grabbing;
   box-shadow: 0 0 20px rgba(90, 203, 250, 0.5);
 }
+
+
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  color: var(--accent-pink);
+}
+
+.date-time {
+  color: var(--accent-blue);
+}
