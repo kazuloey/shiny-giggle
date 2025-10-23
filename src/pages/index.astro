@@ -64,6 +64,7 @@ import gsap from "gsap";
           onComplete: () => {
             // Luego, aplica la física
             gsap.to('#square', {
+              duration: 5, // Duración de la animación física  
               physicsProps: {
                   x: { velocity: 100, acceleration: 200 },
                   y: { velocity: -200, friction: 0.1 },
