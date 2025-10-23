@@ -1,0 +1,270 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-pink: #ff6bd5;
+  --accent-blue: #5acbfa;
+  --light-blue: #b0c2ff;
+  --nav-bg: rgba(17, 17, 17, 0.7);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  height: 100vh;
+  padding: 1rem;
+  position: relative;
+  border: 1px solid var(--border-color);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid var(--text-color);
+}
+
+.logo-line {
+  height: 2px;
+  background-color: var(--text-color);
+  width: 100%;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.social-link {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+  margin: 2rem auto;
+  padding: 0.5rem;
+  background-color: var(--nav-bg);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--border-color);
+}
+
+.nav-item {
+  padding: 0.5rem 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.nav-item.active {
+  background-color: white;
+  color: black;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+.grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  z-index: 0;
+}
+
+.grid-cell {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image-container {
+  position: relative;
+  z-index: 1;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+}
+
+.image-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cloud {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.cloud-1 {
+  width: 150px;
+  height: 80px;
+  top: 10%;
+  right: 15%;
+}
+
+.cloud-2 {
+  width: 100px;
+  height: 60px;
+  top: 30%;
+  left: 20%;
+}
+
+.footer {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  z-index: 1;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-time {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.barcode {
+  height: 30px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.barcode-line {
+  height: 100%;
+  background-color: var(--text-color);
+  margin-right: 2px;
+}
+
+.thin {
+  width: 1px;
+}
+
+.medium {
+  width: 2px;
+}
+
+.thick {
+  width: 3px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
