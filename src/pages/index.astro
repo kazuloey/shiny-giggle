@@ -59,16 +59,14 @@ import gsap from "gsap";
         // Primero, animar la opacidad a 1
         gsap.to('#square', {
           opacity: 100, // Termina con opacidad 100
-          duration: 1, // Duración de la animación de opacidad
+          duration: 2, // Duración de la animación de opacidad
           onComplete: () => {
             // Luego, aplica la física
             gsap.to('#square', {
-              physics2D: {
-                velocity: 300, // Velocidad inicial
-                angle: 45, // Ángulo de lanzamiento
-                gravity: 500 // Gravedad
+              physicsProps: {
+                  x: { velocity: 100, acceleration: 200 },
+                  y: { velocity: -200, friction: 0.1 },
               },
-              duration: 4 // Duración de la animación
             });
           }
         });
