@@ -1,97 +1,35 @@
 ---
-import Card from "../components/Card.astro"
-import { gsap } from "gsap/gsap-core";
-import PhysicsPropsPlugin from 'gsap/PhysicsPropsPlugin';
-gsap.registerPlugin(PhysicsPropsPlugin);
+
 ---
-
-
 
 <!DOCTYPE html>
 <html lang="ja" data-op-end="false">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Demo portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/styles/main.css">
-     
-        <title>Demo portfolio</title>
-        <style>
-         /* Estilo para el cuadrado */
-         #verde {
-          width: 2cm; /* Ancho del cuadrado */
-          height: 2cm; /* Alto del cuadrado */
-          background-color: rgb(162, 239, 40); /* Color verde */
-          border-radius: 10px; /* Esquinas redondeadas */
-          opacity: 0; /* Opacidad inicial */
-          position: absolute; /* Para poder animar su posición */
-          top: 50%; /* Centrar verticalmente en pantalla */
-          left: 50%; /* Centrar horizontalmente en pantalla */
-          transform: translate(-50%, -50%); /* Ajustar la posición para centrar */
-         }
-        </style>
     </head>
-
-    <body>
-         <a href="/">Inicio</a>
-	     <a href="/work/">Portfolio</a>
-         <a href="/about/">Sobre mi</a>
-         <a href="/contact/">Contact</a>  
     
-    <div class="bitcount-grid-single">
-      <div class="item">Elemento 1</div>
-      <div class="item">Elemento 2</div>
-      <div class="item">Elemento 3</div>
-      <!-- Agrega más elementos según sea necesario -->
-    </div>
-    <div class="_eventGrid_1fs6u_428">
-        <div 
-            class="_wrapper_oc6qz_1" 
-            data-js="grid" 
-            data-outline="false" 
-            data-common="false"
-        >
-            <canvas 
-                data-engine="three.js r173" 
-                width="682" 
-                height="752"
-            ></canvas>
+    <body>
+        <nav class="nav">
+         <a href="/" class="nav-item active">HOME</a>
+         <a href="/works" class="nav-item">WORKS</a>
+         <a href="/profile" class="nav-item">PROFILE</a>
+         <a href="/contact" class="nav-item">CONTACT</a>
+        </nav>
+
+        <h1>Portfolio</h1>
+        <p>que divertido y complicado es esto</p> 
+        
+        <div class="footer-info">
+           <div class="footer-time">1:09</div>
+           <div class="footer-text">illustration</div>
+           <div class="footer-text">portfolio</div>
         </div>
-    </div>
-        <div id="verde"></div> <!-- El cuadrado a animar -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r173/three.min.js"></script>
-    <script>
-    import gsap from "gsap";
-      // Ejecutar la animación al cargar la página
-      window.onload = () => {
-        // Primero, animar la opacidad a 1
-        gsap.to('#verde', {
-          opacity: 1, // Termina con opacidad 1
-          duration: 1, // Duración de la animación de opacidad
-          rotateY: 360, // Rota sobre el eje Y
-          onComplete: () => { // Luego, aplica la física
-            gsap.to('#verde', {
-              duration: 5, // Duración de la animación física  
-              physicsProps2D: {
-                x:{velocity:100, acceleration:400},
-                y:{velocity:100, friction:0.002}
-              },
-              onComplete: () => {
-                console.log("Animación completa");
-              }
-            });
-          }
-        });
-      };
-    </script>
-        </div>
-     <h1>Portfolio</h1>
-     <p>que divertido y complicado es esto</p> 
-    <div class="footer-info">
-     <div class="footer-time">1:09</div>
-    <div class="footer-text">illustration</div>
-    <div class="footer-text">portfolio</div>
-</div>
+
+        <script src="/scripts/interactive.js"></script>
     </body>
 </html>
