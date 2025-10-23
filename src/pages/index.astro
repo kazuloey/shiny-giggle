@@ -1,6 +1,11 @@
 ---
 import Card from "../components/Card.astro"
+import { gsap } from "gsap/gsap-core";
 ---
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -11,7 +16,18 @@ import Card from "../components/Card.astro"
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/style.css" /> <!-- Enlace a style.css -->
-    <title>Demo portfolio</title>
+     
+        <title>Demo portfolio</title>
+        <style>
+         /* Estilo para el cuadrado */
+         #square {
+          width: 2cm; /* Ancho del cuadrado */
+          height: 2cm; /* Alto del cuadrado */
+          background-color: green; /* Color verde */
+          border-radius: 10px; /* Esquinas redondeadas */
+          opacity: 0; /* Opacidad inicial */
+         }
+        </style>
     </head>
 
     <body>
@@ -26,7 +42,21 @@ import Card from "../components/Card.astro"
       <div class="item">Elemento 3</div>
       <!-- Agrega más elementos según sea necesario -->
     </div>
-     
+        <div id="square"></div> <!-- El cuadrado a animar -->
+    
+    <script>
+import gsap from "gsap";
+
+      // Ejecutar la animación al cargar la página
+      window.onload = () => {
+        gsap.to('#square', {
+          opacity: 100, // Termina con opacidad 100
+          rotateY: 360, // Rota sobre el eje Y
+          duration: 4 // Duración de la animación
+        });
+      };
+    </script>
+        </div>
      <h1>Portfolio</h1>
      <p>que divertido y complicado es esto</p> 
     </body>
